@@ -2,6 +2,12 @@ body, ul {
   margin: 0;
   padding: 0;
 }
+
+body {
+  max-width: 1200px;
+  margin: auto;
+}
+
 ul {
   list-style: none;
 }
@@ -47,6 +53,9 @@ ul.tabs {
 .tabs li.active {
   background-color: #2ac1bc;
   color: #fff;
+}
+.tabs li:hover{
+  cursor: pointer;
 }
 .list li {
   box-sizing: border-box;

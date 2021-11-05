@@ -1,31 +1,37 @@
 import View from "./View.js";
 
-const tag = '[ResultView]';
+const tag = "[ResultView]";
 
 const ResultView = Object.create(View);
 
-ResultView.setup = function(element){
+ResultView.setup = function (element) {
     this.init(element);
-    console.log(tag, 'setup');
-}
+    console.log(tag, "setup");
+};
 
-ResultView.render = function(data = []){
-    console.log(tag, 'render()', data);
-    this.el.innerHTML = data.length ? this.getSearchResultHtml(data) : `검색 결과가 없습니다.`;
-}
+ResultView.render = function (data = []) {
+    console.log(tag, "render()", data);
 
-ResultView.getSearchResultHtml = function(data){
-    return data.reduce((html, item) => {
-        html += this.getSearchItemHtml(item);
-        return html;
-    }, '<ul>') + '</ul>'
-}
+    this.el.innerHTML = data.length
+        ? this.getSearchResultHtml(data)
+        : `검색 결과가 없습니다.`;
+    this.show();
+};
 
-ResultView.getSearchItemHtml = function(item){
+ResultView.getSearchResultHtml = function (data) {
+    return (
+        data.reduce((html, item) => {
+            html += this.getSearchItemHtml(item);
+            return html;
+        }, "<ul>") + "</ul>"
+    );
+};
+
+ResultView.getSearchItemHtml = function (item) {
     return `<li>
-        <img src="${item.image}"/>
+        <img src="${item.image}" onerror="this.remove ? this.remove() : this.removeNode()"/>
         ${item.name}
     </li>`;
-}
+};
 
 export default ResultView;
