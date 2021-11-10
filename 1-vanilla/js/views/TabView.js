@@ -7,7 +7,6 @@ TabView.setup = function (element) {
     this.init(element);
     this.tabs = Array.from(this.el.querySelectorAll("li"));
     this.bindEvents();
-
     return this;
 };
 
