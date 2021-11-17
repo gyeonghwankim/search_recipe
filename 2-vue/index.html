@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>MVC with Vanilla.JS</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <div>
-    <header>
-      <h2 class="container">검색</h2>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>MVC with Vanilla.JS</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <h2 class="container">검색</h2>
+            </header>
 
-    <div class="container">
-      
-    </div>
-  </div>
-  <script type="module" src="./js/app.js"></script>
-</body>
+            <div class="container">
+                <form v-on:submit.prevent="onSubmit">
+                    <input
+                        type="text"
+                        v-model="query"
+                        v-on:keyup="onKeyup"
+                        placeholder="검색어를 입력하세요"
+                        autofocus
+                    />
+                    <button
+                        type="reset"
+                        v-show="query.length"
+                        v-on:click="onReset"
+                        class="btn-reset"
+                    ></button>
+                </form>
+            </div>
+        </div>
+        <script src="https://unpkg.com/vue"></script>
+        <script type="module" src="./js/app.js"></script>
+    </body>
 </html>
