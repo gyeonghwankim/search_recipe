@@ -12,7 +12,8 @@ ul {
   list-style: none;
 }
 img {
-  width: 100%;
+  max-width: 10%;
+  height: auto;
 }
 
 .container {
@@ -63,6 +64,7 @@ ul.tabs {
   padding: 15px;
   border-bottom: 1px solid #ccc; 
   position: relative;
+  text-align: center;
 }
 .list li:last-child {
   border-bottom: none;
@@ -113,4 +115,9 @@ form {
 #search-result img {
   width: 30%;
   height: 30%;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
 }
