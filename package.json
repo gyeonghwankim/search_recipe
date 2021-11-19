@@ -18,5 +18,8 @@
   "homepage": "https://github.com/gyeonghwankim/search_recipe#readme",
   "devDependencies": {
     "eslint": "^8.0.1"
+  },
+  "dependencies": {
+    "vue-cli": "^2.9.6"
   }
 }
